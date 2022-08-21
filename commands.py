@@ -19,8 +19,7 @@ async def on_ready():
 
     print(
         f'{bot.user} is connected to the following guild:\n'
-        f'{DISCORD_GUILD}'
-    )
+        f'{DISCORD_GUILD}'    )
 
 @bot.event
 async def on_member_join(member):
@@ -31,6 +30,8 @@ async def on_member_join(member):
 
 @bot.command(name='rt', help='Use !rt para invocar frases aleatórias do bot')
 async def quote(ctx):
+
+    
 
     quotes = [
         
@@ -46,20 +47,24 @@ async def quote(ctx):
     response = random.choice(quotes)
     await ctx.send(response)
 
-@bot.command(name='people', help="Mostra dados de personagem de Star Wars")
-async def all_companies(ctx):
+@bot.command(name=f'people', help="Mostra dados de personagem de Star Wars")
+async def all_companies(ctx, *args):
 
-    embed = discord.Embed(color=0x1E1E1E, type='rich')
+    message = ' '.join(word for word in args)
+
+    embed = discord.Embed(color=0x1E1E1E, type='rich')   
     
-    people, page = get_people() 
+    informed_page = message # colhe o numero da pagina pra pedir pra API   
+
+    people, returned_page = get_people(informed_page)    #retorna os dados da API   
     
-    page = page 
+
     name = people['name']   
     birth_year = people['birth_year']
     homeworld = people['homeworld']
     starships = people['starships']    
   
-    embed.add_field(name="page", value=page, inline=False)
+    embed.add_field(name="page", value=returned_page, inline=False)
     embed.add_field(name="name", value=name, inline=False) 
     embed.add_field(name="birth year", value=birth_year, inline=False)
     embed.add_field(name="home world", value=homeworld, inline=False)
@@ -71,7 +76,10 @@ async def all_companies(ctx):
     components = ActionRow(button1, button2)
 
     await ctx.send(embed=embed, components=components)
-  
+    
+
+
+
 
 try:
     bot.run(DISCORD_TOKEN)
