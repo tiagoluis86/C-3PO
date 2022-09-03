@@ -8,7 +8,7 @@ Também nos ajuda a entender e conhecer melhor o universo de Star Wars.
 
 Como usar
 ---------------------------------------------
-
-C-3PO tem como comandos
+Rodar no seu servidor do Discord.
+C-3PO tem como comandos:
 !rt - emitir quotes aleatórios
 !people 1 ou qualquer número - mostrar pessoas de Star Wars
