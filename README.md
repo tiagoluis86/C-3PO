@@ -9,8 +9,7 @@ Também nos ajuda a entender e conhecer melhor o universo de Star Wars.
 Como usar
 ---------------------------------------------
 Rodar no seu servidor do Discord.C-3PO por enquanto os seguintes comandos:
-> !rt - emitir quotes aleatórios
-> !people 1 ou qualquer número - mostrar pessoas de Star Wars
+!rt - emitir quotes aleatórios / !people 1 ou qualquer número - mostrar pessoas de Star Wars
 
 ![image](https://user-images.githubusercontent.com/70555750/188277022-de80b8b5-5894-4277-8420-f01d071eb48e.png)
 
